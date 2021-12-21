@@ -62,32 +62,46 @@ $faqs= [
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital@0;1&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Document</title>
 </head>
 <body>
-
-  <div class="nav">
-    <div>
-
+  <header>
+    <div class="logo-user">
+      <div class="top-left-nav">
+        <img src="img/featured.png" alt="google logo">
+        <h4>Privacy e termini</h4>
+      </div>
+      <div class="top-right-nav">
+        <i class="fas fa-align-justify"></i>
+        <i class="fas fa-user-circle"></i>
+      </div>
     </div>
-    <div>
-      
+    <div class="nav-menu">
+      <ul>
+        <li>Introduzione</li>
+        <li>Norme sulla privacy</li>
+        <li>Termini di servizio</li>
+        <li>Tecnologie</li>
+        <li class="active">Domande frequenti</li>
+      </ul>
     </div>
-  </div>
-  <div class="container">
+  </header>
+  <main>
+    <div class="container">
+  
+      <?php foreach($faqs as $faq){ ?>
+        <h2><?php echo $faq['title']; ?></h2>
 
-    <?php foreach($faqs as $faq){ ?>
-      <h2><?php echo $faq['title']; ?></h2>
-
-      <?php foreach($faq['text'] as $text){ ?>
-      <p><?php echo $text; ?></p>
+        <?php foreach($faq['text'] as $text){ ?>
+        <p><?php echo $text; ?></p>
       <?php } ?>
 
-    <?php } ?>
+      <?php } ?>
 
-  </div>
-
+    </div>
+  </main>
 </body>
 </html>
